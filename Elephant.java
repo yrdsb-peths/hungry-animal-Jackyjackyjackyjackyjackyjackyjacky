@@ -52,11 +52,13 @@ public class Elephant extends Actor
         animateElephant();
     }
     public void eat(){
-            if(isTouching(Apple.class)){
-            removeTouching(Apple.class);
+        Actor actor = getOneIntersectingObject(Food.class);
+        if(actor != null) {
+            Food food = (Food) actor;
             MyWorld world = (MyWorld) getWorld();
-            world.createApple();
-            world.increaseScore();
+            world.createFood();
+            world.increaseScore(food.value);
+            world.removeObject(food);
             elephantSound.play();
         }
     }

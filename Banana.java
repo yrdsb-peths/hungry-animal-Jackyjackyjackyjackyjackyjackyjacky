@@ -1,14 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Apple extends Food
+
+public class Banana extends Food
 {
-    public Apple()
+    public Banana()
     {
-        super(1);
+        super(3);
     }
     public void act()
     {
-        setLocation(getX(), getY() + speed);
+        setLocation(getX(), getY() + speed  + 1);
         
         MyWorld world = (MyWorld) getWorld();
         if(getY() >= world.getHeight()){

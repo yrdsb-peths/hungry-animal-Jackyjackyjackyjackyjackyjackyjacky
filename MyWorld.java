@@ -23,7 +23,7 @@ public class MyWorld extends World
         label = new Label(0, 80);
         addObject(label, 30, 35);
         
-        createApple();
+        createFood();
     }
     
     public void gameOver(){
@@ -31,8 +31,8 @@ public class MyWorld extends World
         addObject(gameOverLabel, 300, 200);
     }
     
-    public void increaseScore(){
-        score++;
+    public void increaseScore(int value){
+        score += value;
         label.setValue(score);
         if(score % 5 == 0)
         {
@@ -40,11 +40,18 @@ public class MyWorld extends World
         }
     }
     
-    public void createApple(){
-        Apple apple = new Apple();
-        apple.setSpeed(level);
+    public void createFood(){
+        Food food;
+        int num = Greenfoot.getRandomNumber(2);
+        if(num == 0) {
+            food = new Apple();
+        }
+        else {
+            food = new Banana();
+        }
+        food.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
-        addObject(apple, x, y);
+        addObject(food, x, y);
     }
 }
