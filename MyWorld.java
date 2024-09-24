@@ -35,9 +35,16 @@ public class MyWorld extends World
     }
     
     public void createApple(){
-        Apple apple = new Apple();
+        Food food;
+        int num = Greenfoot.getRandomNumber(2);
+        if(num == 0){
+            food = new Apple();
+        } 
+        else{
+            food = new Banana();
+        }
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
-        addObject(apple, x, y);
+        addObject(food, x, y);
     }
 }

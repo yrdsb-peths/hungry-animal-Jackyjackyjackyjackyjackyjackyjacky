@@ -52,8 +52,8 @@ public class Elephant extends Actor
         animateElephant();
     }
     public void eat(){
-            if(isTouching(Apple.class)){
-            removeTouching(Apple.class);
+            if(isTouching(Food.class)){
+            removeTouching(Food.class);
             MyWorld world = (MyWorld) getWorld();
             world.createApple();
             world.increaseScore();
